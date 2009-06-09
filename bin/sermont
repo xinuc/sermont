@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'sermont'
+require 'fileutils'
+
+if ARGV.empty?
+  Sermont.new.run
+elsif ARGV.include? "--help" || ARGV.include? "-h"
+  help = <<-HELP
+  
+  HELP
+  puts help
+elsif ARGV.include? "--setup"
+  FileUtils.cp(File.dirname(__FILE__) + "../lib/config/sermont.yaml",
+    File.expand_path("~/.sermont.yml"))
+  FileUtils.mkdir(File.expand_path("~/.sermont"))
+  puts "Creating #{File.expand_path("~/.sermont")} directory."
+  puts "Copying .sermont.yml to your home directory."
+  puts "Please edit this file according to your servers."
+else
+  raw, time, out, daemon = nil
+  raw = ARGV.include? "--raw" || ARGV.include? "-r"
+  if ARGV.include? "-t"
+    t_index = ARGV.index("-t")
+    time = ARGV[t_index + 1]
+  end
+  if ARGV.include? "-o" || ARGV.include? "--output"
+    o_index = ARGV.index("-o") || ARGV.index("--output")
+    out = ARGV[o_index + 1]
+  end
+  daemon = ARGV.include? "--daemon" || ARGV.include? "-d"
+  Sermont.new.run(raw, time, out, daemon)
+end

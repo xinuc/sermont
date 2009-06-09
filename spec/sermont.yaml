@@ -1,0 +1,18 @@
+# Add your servers informations here
+# the informations consist of :
+#   - servername: the name of the server
+#   - ip: ip address of your server
+#   - services: all the services of your server, consists of the name and the port
+# see the examples below.
+--- 
+- servername: My Server
+  ip: 127.0.0.1
+  services: 
+    ftp: 21
+    http: 80
+- servername: Yet Another Server
+  ip: 127.0.0.2
+  services: 
+    ftp: 21
+    http: 80
+    ssh: 22
