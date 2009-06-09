@@ -42,6 +42,20 @@ install xinuc-sermont from github.com
 
   sudo gem install xinuc-sermont --source=http://gems.github.com
 
+== Add Your Own Handler
+
+If you have any services that can't be checked by simply openi the port, you can
+add you own service handler. As an example, if you want to check 'weird' service by
+your own method, you can create a file name "weird.rb" under YOUR_HOME_DIR/.sermont/
+Then, the file should be like :
+
+  # file: weird.rb
+
+  def weird(host, port)
+    # your own checking algorithm
+    # this method should return true if the service is running
+    # and false if the service is stopped.
+  end
 
 == Copyright
 
