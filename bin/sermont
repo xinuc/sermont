@@ -10,7 +10,7 @@ if ARGV.empty?
 elsif ARGV.include?("--help") || ARGV.include?("-h")
   help = <<-HELP
 Usage: sermont [options]
-Options
+Options:
 
   --setup               : copy example config file to your home directory
   -r,  --raw            : print the report without colors
@@ -19,6 +19,12 @@ Options
   -d, --daemont         : running as a daemon
   -h, --help            : print this help
   -v, --version         : print sermont version
+
+Example:
+
+  sermont -r -o /var/log/sermont.log -d -t 1800
+
+Sermont by xinuc, http://github.com/xinuc/sermont
   HELP
   
   puts(help)
@@ -26,6 +32,7 @@ elsif ARGV.include?("--version") || ARGV.include?("-v")
   config = YAML.load(File.read(File.dirname(__FILE__) + '/../' + 'VERSION.yml'))
   version = "#{config[:major]}.#{config[:minor]}.#{config[:patch]}"
   puts "Sermont : version #{version}"
+  puts "Sermont by xinuc, http://github.com/xinuc/sermont"
 elsif ARGV.include?("--setup")
   FileUtils.cp(File.expand_path(File.dirname(__FILE__) + "/../lib/config/sermont.yaml"), File.expand_path("~/.sermont.yml"))
   FileUtils.mkdir(File.expand_path("~/.sermont"))

@@ -12,7 +12,7 @@ type the command in your terminal.
 
   sermont [options]
 
-=== Options
+=== Options:
 
   --setup               : copy example config file to your home directory
   -r,  --raw            : print the report without colors
@@ -21,6 +21,10 @@ type the command in your terminal.
   -d, --daemont         : running as a daemon
   -h, --help            : print this help
   -v, --version         : print sermont version
+
+=== Example:
+
+  sermont -r -o /var/log/sermont.log -d -t 1800
 
 == REQUIREMENTS:
 

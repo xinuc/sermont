@@ -50,7 +50,7 @@ class Sermont
     unless time
       output ? add_to_output(report, output) : print(report)
     else
-      if daemon && @can_daemon
+      if daemon && @can_daemon && output
         pwd = Dir.pwd
         daemonize
         Dir.chdir pwd
@@ -83,7 +83,6 @@ class Sermont
         report << handle_service(k, ip, v)
       end
     end
-    report << notification(":sermont => http://github.com/xinuc/sermont")
     report
   end
 
@@ -91,7 +90,7 @@ class Sermont
     if @raw
       notif + whitespace(notif) + "\n"
     else
-      on_black + dark + notif + whitespace(notif) + "\n" + clear
+      on_black + dark + notif + whitespace(notif) + clear + "\n"
     end
   end
 
@@ -119,9 +118,9 @@ class Sermont
 
   def host_status(alive)
     if alive
-      @raw ? "Alive     \n" : bold + on_green + white + "Alive     \n" + clear
+      @raw ? "Alive     \n" : bold + on_green + white + "Alive     " + clear + "\n"
     else
-      @raw ? "In Trouble\n" : bold + on_red + white + "In Trouble\n" + clear
+      @raw ? "In Trouble\n" : bold + on_red + white + "In Trouble" + clear + "\n"
     end
   end
 
@@ -139,9 +138,9 @@ class Sermont
 
   def service_status(running)
     if running
-      @raw ? "Running   \n" : bold + on_green + white + "Running   \n" + clear
+      @raw ? "Running   \n" : bold + on_green + white + "Running   " + clear + "\n"
     else
-      @raw ? "Stopped   \n" : bold + on_red + white + "Stopped   \n" + clear
+      @raw ? "Stopped   \n" : bold + on_red + white + "Stopped   " + clear + "\n"
     end
   end
 
