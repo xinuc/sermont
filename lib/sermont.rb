@@ -38,7 +38,7 @@ class Sermont
   def load_setup
     config_file = File.expand_path("~/.sermont.yml")
     unless File.exists?(config_file) && @servers = YAML.load(IO.read(config_file))
-      puts "Config file .sermont.yml not exists or invalid."
+      puts "Config file .sermont.yml doesn't exists or invalid."
       puts "Run  'sermont --setup' to create example config file in your home directory"
       exit
     end

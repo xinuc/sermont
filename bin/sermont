@@ -35,7 +35,7 @@ elsif ARGV.include?("--version") || ARGV.include?("-v")
   puts "Sermont by xinuc, http://github.com/xinuc/sermont"
 elsif ARGV.include?("--setup")
   FileUtils.cp(File.expand_path(File.dirname(__FILE__) + "/../lib/config/sermont.yaml"), File.expand_path("~/.sermont.yml"))
-  FileUtils.mkdir(File.expand_path("~/.sermont"))
+  FileUtils.mkdir(File.expand_path("~/.sermont")) unless File.exists?(File.expand_path("~/.sermont"))
   puts "Creating #{File.expand_path("~/.sermont")} directory."
   puts "Copying .sermont.yml to your home directory."
   puts "Please edit this file according to your servers."
