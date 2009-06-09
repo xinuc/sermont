@@ -48,7 +48,7 @@ class Sermont
     load_setup
     @raw = @raw || raw
     unless time
-      output ? add_to_output(report, output) : puts(report)
+      output ? add_to_output(report, output) : print(report)
     else
       if daemon && @can_daemon
         pwd = Dir.pwd
@@ -56,7 +56,7 @@ class Sermont
         Dir.chdir pwd
       end
       loop do
-        output ? add_to_output(report, output) : puts(report)
+        output ? add_to_output(report, output) : print(report)
         begin
           sleep time.to_i
         rescue Exception

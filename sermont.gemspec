@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ["Nugroho Herucahyono"]
   s.date = %q{2009-06-09}
   s.default_executable = %q{sermont}
+  s.description = %q{Server Monitor}
   s.email = %q{xinuc@xinuc.org}
   s.executables = ["sermont"]
   s.extra_rdoc_files = [
