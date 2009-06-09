@@ -125,7 +125,7 @@ class Sermont
   end
 
   def handle_host(servername, ip)
-    host_str(servername) + host_status(self.ping ip)
+    host_str(servername) + host_status(self.ping(ip))
   end
 
   def service_str(service)
