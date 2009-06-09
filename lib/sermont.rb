@@ -145,7 +145,11 @@ class Sermont
   end
 
   def handle_service(handler, ip, port)
-    running = self.respond_to?(handler) ? self.send(handler, ip, port) : self.open_port(ip, port)
+    running = begin
+      self.send(handler, ip, port)
+    rescue NoMethodError
+      self.open_port(ip, port)
+    end
     service_str(handler) + service_status(running)
   end
   
