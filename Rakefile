@@ -5,10 +5,14 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "sermont"
-    gem.summary = %Q{TODO}
+    gem.summary = "Server Monitor"
     gem.email = "xinuc@xinuc.org"
     gem.homepage = "http://github.com/xinuc/sermont"
-    gem.authors = ["xinuc"]
+    gem.authors = ["Nugroho Herucahyono"]
+    gem.add_dependency("daemons", ">= 1.0.10")
+    gem.add_dependency("term-ansicolor", ">= 1.0.3")
+    gem.executables = ["sermont"]
+    gem.default_executable = "sermont"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 

@@ -7,7 +7,7 @@ rescue LoadError
 end
 
 begin
-  require "daemonize"
+  require "daemons"
 rescue LoadError
 end
 
@@ -45,15 +45,23 @@ class Sermont
   end
 
   def run(raw = nil, time = nil, output = nil, daemon = nil)
-    load_servers
-    daemonize if daemon
+    load_setup
     @raw = @raw || raw
     unless time
-      output ? add_to_output(report, output) : print(report)
+      output ? add_to_output(report, output) : puts(report)
     else
-      while true
-        output ? add_to_output(report, output) : print(report)
-        sleep time
+      if daemon && @can_daemon
+        pwd = Dir.pwd
+        daemonize
+        Dir.chdir pwd
+      end
+      loop do
+        output ? add_to_output(report, output) : puts(report)
+        begin
+          sleep time.to_i
+        rescue Exception
+          exit
+        end
       end
     end
   end

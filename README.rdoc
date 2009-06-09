@@ -1,7 +1,43 @@
 = sermont
 
-Description goes here.
+* http://github.com/xinuc/sermont
+
+== DESCRIPTION:
+
+Sermont is a command line based script to monitor your servers.
+
+== SYNOPSIS:
+
+type the command in your terminal.
+
+  sermont [options]
+
+=== Options
+
+  --setup               : copy example config file to your home directory
+  --raw or -r           : print the report without colors
+  --time <x> or -t <x>  : checking every x seconds
+  --output <f> of -o <f>: write the report to the file f
+  --daemont or -d       : running as a daemon
+  --help or -h          : print help
+
+== REQUIREMENTS:
+
+* term-ansicolor
+* daemons
+
+== INSTALL:
+
+install faker & hoe gem if you haven't
+
+  sudo gem install term-ansicolor
+  sudo gem install daemons
+
+install xinuc-sermont from github.com
+
+  sudo gem install xinuc-sermont --source=http://gems.github.com
+
 
 == Copyright
 
-Copyright (c) 2009 xinuc. See LICENSE for details.
+Copyright (c) 2009 Nugroho Herucahyono. See LICENSE for details.
