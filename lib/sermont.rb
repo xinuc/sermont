@@ -44,11 +44,11 @@ class Sermont
     end
   end
 
-  def run(raw = nil, time = nil, output = nil, daemon = nil)
+  def run(raw = nil, time = nil, output = nil, daemon = nil, last = nil)
     load_setup
     @raw = @raw || raw
     unless time
-      output ? add_to_output(report, output) : print(report)
+      output ? add_to_output(report, output, last) : print(report)
     else
       if daemon && @can_daemon && output
         pwd = Dir.pwd
@@ -56,7 +56,7 @@ class Sermont
         Dir.chdir pwd
       end
       loop do
-        output ? add_to_output(report, output) : print(report)
+        output ? add_to_output(report, output, last) : print(report)
         begin
           sleep time.to_i
         rescue Exception
@@ -66,8 +66,8 @@ class Sermont
     end
   end
 
-  def add_to_output(out, file)
-    File.open(file, "ab") do |f|
+  def add_to_output(out, file, last)
+    File.open(file, last ? "wb" : "ab") do |f|
       f << out
     end
   end

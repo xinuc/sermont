@@ -16,6 +16,7 @@ Options:
   -r,  --raw            : print the report without colors
   -t TIME, --time TIME  : checking every TIME seconds
   -o FILE, --output FILE: write the report to the FILE
+  -l, --last            : log only the last report
   -d, --daemon          : running as a daemon
   -h, --help            : print this help
   -v, --version         : print sermont version
@@ -51,5 +52,6 @@ else
     out = ARGV[o_index + 1]
   end
   daemon = ARGV.include?("--daemon") || ARGV.include?("-d")
-  Sermont.new.run(raw, time, out, daemon)
+  last = ARGV.include?("--last") || ARGV.include?("-l")
+  Sermont.new.run(raw, time, out, daemon, last)
 end
