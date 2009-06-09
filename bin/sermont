@@ -16,7 +16,7 @@ Options:
   -r,  --raw            : print the report without colors
   -t TIME, --time TIME  : checking every TIME seconds
   -o FILE, --output FILE: write the report to the FILE
-  -d, --daemont         : running as a daemon
+  -d, --daemon          : running as a daemon
   -h, --help            : print this help
   -v, --version         : print sermont version
 
