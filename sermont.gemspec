@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ["Nugroho Herucahyono"]
   s.date = %q{2009-06-09}
   s.default_executable = %q{sermont}
-  s.description = %q{Server Monitor}
+  s.description = %q{Sermont is a command line based script to monitor your servers.}
   s.email = %q{xinuc@xinuc.org}
   s.executables = ["sermont"]
   s.extra_rdoc_files = [
@@ -38,6 +38,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/xinuc/sermont}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
+  s.rubyforge_project = %q{indofaker}
   s.rubygems_version = %q{1.3.4}
   s.summary = %q{Server Monitor}
   s.test_files = [

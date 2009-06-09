@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "sermont"
     gem.summary = "Server Monitor"
-    gem.description = "Server Monitor"
+    gem.description = "Sermont is a command line based script to monitor your servers."
     gem.email = "xinuc@xinuc.org"
     gem.homepage = "http://github.com/xinuc/sermont"
     gem.authors = ["Nugroho Herucahyono"]
@@ -14,6 +14,7 @@ begin
     gem.add_dependency("term-ansicolor", ">= 1.0.3")
     gem.executables = ["sermont"]
     gem.default_executable = "sermont"
+    gem.rubyforge_project = "indofaker"
   end
 
 rescue LoadError
