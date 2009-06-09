@@ -3,6 +3,7 @@
 require 'rubygems'
 require 'sermont'
 require 'fileutils'
+require 'yaml'
 
 if ARGV.empty?
   Sermont.new.run
@@ -17,10 +18,15 @@ Options
   -o FILE, --output FILE: write the report to the FILE
   -d, --daemont         : running as a daemon
   -h, --help            : print this help
+  -v, --version         : print sermont version
   HELP
   
   puts(help)
-elsif ARGV.include? "--setup"
+elsif ARGV.include?("--version") || ARGV.include?("-v")
+  config = YAML.load(File.read(File.dirname(__FILE__) + '/../' + 'VERSION.yml'))
+  version = "#{config[:major]}.#{config[:minor]}.#{config[:patch]}"
+  puts "Sermont : version #{version}"
+elsif ARGV.include?("--setup")
   FileUtils.cp(File.expand_path(File.dirname(__FILE__) + "/../lib/config/sermont.yaml"), File.expand_path("~/.sermont.yml"))
   FileUtils.mkdir(File.expand_path("~/.sermont"))
   puts "Creating #{File.expand_path("~/.sermont")} directory."

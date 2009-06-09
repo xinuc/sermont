@@ -20,6 +20,7 @@ type the command in your terminal.
   -o FILE, --output FILE: write the report to the FILE
   -d, --daemont         : running as a daemon
   -h, --help            : print this help
+  -v, --version         : print sermont version
 
 == REQUIREMENTS:
 
