@@ -33,7 +33,7 @@ type the command in your terminal.
 
 == INSTALL:
 
-install faker & hoe gem if you haven't
+install term-ansicolor & daemons gem if you haven't
 
   sudo gem install term-ansicolor
   sudo gem install daemons
