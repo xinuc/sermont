@@ -1,0 +1,7 @@
+= sermont
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 xinuc. See LICENSE for details.
