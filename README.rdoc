@@ -15,11 +15,11 @@ type the command in your terminal.
 === Options
 
   --setup               : copy example config file to your home directory
-  --raw or -r           : print the report without colors
-  --time <x> or -t <x>  : checking every x seconds
-  --output <f> of -o <f>: write the report to the file f
-  --daemont or -d       : running as a daemon
-  --help or -h          : print help
+  -r,  --raw            : print the report without colors
+  -t TIME, --time TIME  : checking every TIME seconds
+  -o FILE, --output FILE: write the report to the FILE
+  -d, --daemont         : running as a daemon
+  -h, --help            : print this help
 
 == REQUIREMENTS:
 

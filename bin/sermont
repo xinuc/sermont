@@ -8,7 +8,15 @@ if ARGV.empty?
   Sermont.new.run
 elsif ARGV.include?("--help") || ARGV.include?("-h")
   help = <<-HELP
-  
+Usage: sermont [options]
+Options
+
+  --setup               : copy example config file to your home directory
+  -r,  --raw            : print the report without colors
+  -t TIME, --time TIME  : checking every TIME seconds
+  -o FILE, --output FILE: write the report to the FILE
+  -d, --daemont         : running as a daemon
+  -h, --help            : print this help
   HELP
   
   puts(help)
