@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sermont}
-  s.version = "0.3.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nugroho Herucahyono"]
-  s.date = %q{2009-06-09}
+  s.date = %q{2009-06-10}
   s.default_executable = %q{sermont}
   s.description = %q{Sermont is a command line based script to monitor your servers.}
   s.email = %q{xinuc@xinuc.org}
