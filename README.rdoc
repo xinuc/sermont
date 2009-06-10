@@ -43,6 +43,22 @@ install xinuc-sermont from github.com
 
   sudo gem install xinuc-sermont --source=http://gems.github.com
 
+Run
+
+  sermont --setup
+
+it will copy .sermont.yml to your home directory. Edit this file according to
+your servers.
+
+  ---
+  - servername: Your server name
+    ip: 127.0.0.1
+    services:
+      ftp: 21
+      http: 80
+
+Now, you can run <code>sermont</code> to monitor your servers.
+
 == Add Your Own Handler
 
 If you have any services that can't be checked by simply open the port, you can
